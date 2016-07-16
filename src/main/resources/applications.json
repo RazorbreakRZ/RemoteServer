@@ -1,0 +1,35 @@
+{
+	"applications" : [
+		{
+			"appName" : "RemoteServer",
+			"operations" : [
+				{
+					"operName" : "",
+					"commandLine" : ""
+				}
+			]
+		},
+		{
+			"appName" : "ums",
+			"operations" : [
+				{
+					"operName" : "start",
+					"commandLine" : "net start \"Universal Media Server\""
+				},
+				{
+					"operName" : "stop",
+					"commandLine" : "net stop \"Universal Media Server\""
+				}
+			]
+		},
+		{
+			"appName" : "so",
+			"operations" : [
+				{
+					"operName" : "shutdown",
+					"commandLine" : "shutdown -s -t 1"
+				}
+			]
+		}
+	]
+}
