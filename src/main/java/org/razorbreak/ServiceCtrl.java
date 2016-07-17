@@ -23,6 +23,7 @@ public class ServiceCtrl {
 	
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
+	private final long TIMEOUT = 1500;
 	private DtoApplications applications = new DtoApplications();
 	private String username;
 	private String password;
@@ -83,6 +84,7 @@ public class ServiceCtrl {
 			try {
 				log.debug("Executing command line: "+cmd);
 				Process runtimeProcess = Runtime.getRuntime().exec(cmd);
+				Thread.sleep(TIMEOUT);
 			} catch (Exception e) {
 				log.error("An error ocurred while launching the command. Reason: "+e);
 				return false;

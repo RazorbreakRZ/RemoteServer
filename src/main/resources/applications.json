@@ -4,8 +4,8 @@
 			"appName" : "RemoteServer",
 			"operations" : [
 				{
-					"operName" : "",
-					"commandLines" : [""]
+					"operName" : "restart",
+					"commandLines" : ["net stop RazorbreakRemoteServer"]
 				}
 			]
 		},
@@ -19,6 +19,11 @@
 				{
 					"operName" : "stop",
 					"commandLines" : ["net stop \"Universal Media Server\""]
+				},
+				{
+					"operName" : "restart",
+					"commandLines" : ["net stop \"Universal Media Server\"",
+									  "net start \"Universal Media Server\""]
 				}
 			]
 		},
