@@ -5,7 +5,7 @@
 			"operations" : [
 				{
 					"operName" : "",
-					"commandLine" : ""
+					"commandLines" : [""]
 				}
 			]
 		},
@@ -14,11 +14,11 @@
 			"operations" : [
 				{
 					"operName" : "start",
-					"commandLine" : "net start \"Universal Media Server\""
+					"commandLines" : ["net start \"Universal Media Server\""]
 				},
 				{
 					"operName" : "stop",
-					"commandLine" : "net stop \"Universal Media Server\""
+					"commandLines" : ["net stop \"Universal Media Server\""]
 				}
 			]
 		},
@@ -27,7 +27,7 @@
 			"operations" : [
 				{
 					"operName" : "shutdown",
-					"commandLine" : "shutdown -s -t 1"
+					"commandLines" : ["shutdown -s -t 1"]
 				}
 			]
 		}

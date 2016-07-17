@@ -1,18 +1,26 @@
 package org.razorbreak;
 
+import java.util.ArrayList;
+
 public class DtoOperation {
 		
 	private String operName;
-	private String commandLine;
+	private ArrayList<String> commandLines;
 	
 	public DtoOperation(){
 		super();
 	}
 	
-	public DtoOperation(String operName, String commandLine) {
+//	public DtoOperation(String operName, String commandLine) {
+//		super();
+//		this.operName = operName;
+//		this.commandLines.add(commandLine);
+//	}
+	
+	public DtoOperation(String operName, ArrayList<String> commandLines) {
 		super();
 		this.operName = operName;
-		this.commandLine = commandLine;
+		this.commandLines = commandLines;
 	}
 	
 	public String getOperName() {
@@ -23,17 +31,23 @@ public class DtoOperation {
 		this.operName = operName;
 	}
 	
-	public String getCommandLine() {
-		return commandLine;
+	public ArrayList<String> getCommandLines() {
+		return this.commandLines;
 	}
 	
-	public void setCommandLine(String commandLine) {
-		this.commandLine = commandLine;
+	public void setCommandLines(ArrayList<String> commandLines) {
+		this.commandLines = commandLines;
 	}
 
 	@Override
 	public String toString() {
-		return "{" + operName + ",'" + commandLine + "'}";
+		String s = "";
+		s += "{" + operName + ", [";
+		for(String cmd : this.commandLines){
+			s += " '"+cmd+"'";
+		}
+		s += " ]}";
+		return s;
 	}
 
 	
