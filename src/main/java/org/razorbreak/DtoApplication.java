@@ -45,10 +45,10 @@ public class DtoApplication {
 			this.operations.add(operation);
 	}
 	
-	public void addNewOperation(String operName, String commandLine) {
-		if(checkExistOperation(operName)==null)
-			this.operations.add(new DtoOperation(operName, commandLine));
-	}
+//	public void addNewOperation(String operName, String commandLine) {
+//		if(checkExistOperation(operName)==null)
+//			this.operations.add(new DtoOperation(operName, commandLine));
+//	}
 	
 	public DtoOperation checkExistOperation(String operName) {
 		Iterator<DtoOperation> iter = this.operations.iterator();

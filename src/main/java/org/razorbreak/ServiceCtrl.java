@@ -79,15 +79,17 @@ public class ServiceCtrl {
 	
 	@SuppressWarnings("unused")
 	private boolean executeOperation(DtoOperation oper){
-		String command = oper.getCommandLine();
-		log.debug("Executing command line: "+command);
-		try {
-			Process runtimeProcess = Runtime.getRuntime().exec(command);
-			return true;
-		} catch (Exception e) {
-			log.error("An error ocurred while launching the command. Reason: "+e);
-			return false;
+		for(String cmd : oper.getCommandLines()){
+			try {
+				log.debug("Executing command line: "+cmd);
+				Process runtimeProcess = Runtime.getRuntime().exec(cmd);
+				Thread.sleep(Constants.TIMEOUT);
+			} catch (Exception e) {
+				log.error("An error ocurred while launching the command. Reason: "+e);
+				return false;
+			}
 		}
+		return true;
 	}
 
 }
